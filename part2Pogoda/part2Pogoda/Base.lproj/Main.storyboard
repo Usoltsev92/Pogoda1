@@ -16,22 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Погода на сегодня " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1K-B9-jom">
-                                <rect key="frame" x="90.666666666666686" y="118" width="212" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Погода на сегодня " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1K-B9-jom">
+                                <rect key="frame" x="90.666666666666671" y="118" width="211.66666666666663" height="32"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="hgj-GV-zXk">
-                                <rect key="frame" x="76" y="225" width="240" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="hgj-GV-zXk">
+                                <rect key="frame" x="76" y="225" width="241" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="7DU-lQ-8R4"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crt-vq-HuX">
-                                <rect key="frame" x="93" y="583" width="206" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crt-vq-HuX">
+                                <rect key="frame" x="93" y="583" width="207" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="5jL-P1-xAN"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button">
+                                <buttonConfiguration key="configuration" style="filled" title="Get weather">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                 </buttonConfiguration>
@@ -39,7 +42,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hgj-GV-zXk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="2Xe-q1-jEA"/>
+                            <constraint firstItem="P1K-B9-jom" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90.666666666666686" id="3XO-yd-fym"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Crt-vq-HuX" secondAttribute="bottom" constant="81" id="AUo-Au-h9i"/>
+                            <constraint firstItem="Crt-vq-HuX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="Eyb-b4-4aK"/>
+                            <constraint firstItem="P1K-B9-jom" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Htq-0N-5PZ"/>
+                            <constraint firstItem="P1K-B9-jom" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MNR-4I-BTt"/>
+                            <constraint firstItem="hgj-GV-zXk" firstAttribute="centerX" secondItem="Crt-vq-HuX" secondAttribute="centerX" id="bmE-Yj-qlS"/>
+                            <constraint firstItem="Crt-vq-HuX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="orq-hY-h4Q"/>
+                            <constraint firstItem="Crt-vq-HuX" firstAttribute="top" secondItem="hgj-GV-zXk" secondAttribute="bottom" constant="108" id="sYQ-A7-mIZ"/>
+                            <constraint firstItem="hgj-GV-zXk" firstAttribute="top" secondItem="P1K-B9-jom" secondAttribute="bottom" constant="75" id="shj-LP-ZXW"/>
+                            <constraint firstItem="P1K-B9-jom" firstAttribute="centerX" secondItem="hgj-GV-zXk" secondAttribute="centerX" id="yYJ-Np-eVF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getWeatherButton" destination="Crt-vq-HuX" id="VyW-Wg-dOY"/>
+                        <outlet property="label" destination="P1K-B9-jom" id="UHV-EC-7pT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
